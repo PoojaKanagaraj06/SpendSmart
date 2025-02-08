@@ -30,10 +30,10 @@
       
         <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-          
-            <li><a href="#">Contact</a></li>
+            <li><a href="#cardsSection">About</a></li>
+           
+        
+            <li><a href="#footer">Contact</a></li>
         </ul>
     </nav>
   
@@ -61,7 +61,7 @@
 
  
    <!-- Cards Section -->
-   <div class="container">
+   <div id="cardsSection" class="container">
        <div class="card">
         <div class="loader">
             <div class="loader__image">
@@ -157,7 +157,7 @@
 
 <script>
   function navigateToSignup() {
-    window.location.href = '/signup.html'; // Redirect to the signup/login page
+    window.location.href = 'ExpenseTracker/frontend/signup.html';
   }
   function move_image(e) {
   const s = 50; // Speed
@@ -218,7 +218,42 @@ document.querySelectorAll('.artbox').forEach((artbox) => {
 
 })
 </script>
-<footer class="footer">
+<script>
+  function navigateToSignup() {
+      window.location.href = '/signup.html';
+  }
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href").substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 50,
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href").substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 50,
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+});
+});
+</script>
+<footer id=footer class="footer">
   <div class="footer-container">
     <div class="footer-section about">
       <h2>About Us</h2>
@@ -230,7 +265,7 @@ document.querySelectorAll('.artbox').forEach((artbox) => {
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Services</a></li>
-        <li><a href="#">Portfolio</a></li>
+       
         <li><a href="#">Contact</a></li>
       </ul>
     </div>
@@ -266,7 +301,7 @@ document.querySelectorAll('.artbox').forEach((artbox) => {
   </div>
 </footer>
 <!-- Chatbot Icon and Container -->
-</footer>
+
 <!-- Chatbot Icon and Container -->
 <div id="chatbotIcon" class="chatbot-icon">
   <i class="fa fa-comments"></i>

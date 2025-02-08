@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             if (!data.authenticated) {
-                window.location.href = '/signup.html'; // Redirect to signup page if not logged in
+                window.location.href = 'ExpenseTracker/frontend/signup.html'; // Redirect to signup page if not logged in
             }
         })
         .catch(error => console.error('Error checking authentication:', error));

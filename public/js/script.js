@@ -3,7 +3,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('loginForm');
     const addIncomeForm = document.getElementById('add-income-form');
     const addExpenseForm = document.getElementById('add-expense-form');
-
+    const express = require('express');
+    const path = require('path');
+    const app = express();
+    
+    // Serve static files from the 'frontend' directory
+    app.use(express.static(path.join(__dirname, 'frontend')));
+    
+    app.get('/', (req, res) => {
+        res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
+    });
+    
+    app.listen(3000, () => {
+        console.log('Server is running on http://localhost:3000');
+    });
     // Handle Signup Form Submission
     if (signupForm) {
         signupForm.addEventListener('submit', async (e) => {
