@@ -45,7 +45,7 @@
        
     <div class="button-container-1">
       <span class="mas"></span>
-   <button id='work' type="button" name="Hover" onclick="navigateToSignup()">Get Started</button>
+  <button id='work' type="button" name="Hover" onclick="navigateToSignup()">Get Started</button>
    </div>
    
    <div class="button-container-2">
@@ -95,7 +95,7 @@
 </div>
 <div class="vector-image">
   <div class="artbox">
-    <img class="movable-image" src="assets/image1.png" alt="image">
+    <img class="movable-image" src="public/assets/image1.png" alt="image">
   </div>
   
   <div class="feedback-star">
@@ -157,7 +157,7 @@
 
 <script>
   function navigateToSignup() {
-    window.location.href = 'ExpenseTracker/frontend/signup.html';
+      window.location.href = "/ExpenseTracker/frontend/signup.html";
   }
   function move_image(e) {
   const s = 50; // Speed
@@ -219,9 +219,7 @@ document.querySelectorAll('.artbox').forEach((artbox) => {
 })
 </script>
 <script>
-  function navigateToSignup() {
-      window.location.href = '/signup.html';
-  }
+ 
   document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function (e) {
